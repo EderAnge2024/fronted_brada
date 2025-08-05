@@ -130,31 +130,26 @@ const useClienteStore = create((set, get) => ({
 
   // Verificar token en el servidor
   verificarToken: async () => {
-    try {
-      const token = localStorage.getItem('authToken')
-      if (!token) return false
+  try {
+    const response = await axios.get('https://bakend-bradatec.onrender.com/clientes/validar-token', {
+      withCredentials: true
+    })
 
-      const response = await axios.get('https://bakend-bradatec.onrender.com/clientes/validar-token', {
-        withCredentials: true,
-        headers: { 'Authorization': `Bearer ${token}` }
+    if (response.data && response.data.cliente) {
+      set({ 
+        clienteActual: response.data.cliente,
+        isAuthenticated: true
       })
-      
-      if (response.data && response.data.cliente) {
-        set({ 
-          clienteActual: response.data.cliente,
-          isAuthenticated: true,
-          authToken: token
-        })
-        return true
-      }
-      
-      return false
-    } catch (error) {
-      console.error('Token inválido:', error.message)
-      get().logout()
-      return false
+      return true
     }
-  },
+
+    return false
+  } catch (error) {
+    console.error('Token inválido:', error.message)
+    get().logout()
+    return false
+  }
+},
 
   // Actualizar cliente (solo si es necesario para tu app)
   updateCliente: async (ID_Cliente, updatedData) => {
