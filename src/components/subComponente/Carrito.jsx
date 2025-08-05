@@ -3,7 +3,7 @@ import {
   ShoppingCart, Calendar, Trash2, Plus, Minus, 
   UserCheck, AlertTriangle, FileText
 } from "lucide-react";
-import style from './Carrito.module.css';
+import style from './carrito.module.css';
 import { generateFacturaPDF } from "../../store/generadorFacturasPdf";
 import useProductoStore from '../../store/ProductoStore';
 import useClienteStore from "../../store/ClienteStore";
