@@ -280,6 +280,7 @@ const Inicio = ({ searchQuery = "", onNavigateToProfile }) => {
     // Render del carrusel de banners
     const renderCarousel = () => {
         if (bannerImages.length === 0) {
+            //, url('/placeholder-banner.jpg'
             return (
                 <div className={styles.heroBanner} style={{
                     backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)))`,

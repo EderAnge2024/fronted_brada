@@ -8,6 +8,7 @@ import useAdministradorStore from './store/AdministradorStore';
 import { useAuth } from './hooks/useAuth'; // Importar el hook
 import { useState, useEffect } from 'react';
 import TerminosCondiciones from './components/subComponente/TerminosCondiciones';
+import useClienteStore from './store/ClienteStore'; //
 
 function App() {
   // Usar el hook useAuth en lugar de useAuthStore directamente
@@ -16,6 +17,7 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    useClienteStore.getState().initializeFromStorage(); //
     const checkAdmin = async () => {
       try {
         await fetchAdministrador();
