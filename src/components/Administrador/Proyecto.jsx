@@ -1,5 +1,5 @@
 import { useEffect, useState, useCallback } from 'react';
-import useProyectoStore from '../../store/proyectostore';
+import useProyectoStore from '../../store/ProyectoStore';
 import useEmpleadoStore from '../../store/EmpleadoStore';
 import styles from './Proyecto.module.css';
 
