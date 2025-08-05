@@ -25,7 +25,7 @@ const LoginForm = () => {
         setIsLoading(true);
     
         try {
-            const response = await fetch('http://localhost:3001/administrador/login', {
+            const response = await fetch('https://bakend-bradatec.onrender.com/administrador/login', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ Usuario: usuario, Contrasena: contrasena }),
@@ -58,7 +58,7 @@ const LoginForm = () => {
         setError(null);
         setMensaje('');
         try {
-            const response = await fetch('http://localhost:3001/administrador/recuperar-email', {
+            const response = await fetch('https://bakend-bradatec.onrender.com/administrador/recuperar-email', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email }),
@@ -79,7 +79,7 @@ const LoginForm = () => {
         setError(null);
         setMensaje('');
         try {
-            const response = await fetch('http://localhost:3001/administrador/recuperar-email/verificar', {
+            const response = await fetch('https://bakend-bradatec.onrender.com/administrador/recuperar-email/verificar', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email, codigo, nuevaContrasena }),
