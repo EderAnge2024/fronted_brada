@@ -282,7 +282,7 @@ const Inicio = ({ searchQuery = "", onNavigateToProfile }) => {
         if (bannerImages.length === 0) {
             return (
                 <div className={styles.heroBanner} style={{
-                    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/placeholder-banner.jpg')`,
+                    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)))`,
                 }}>
                     <div className={styles.bannerContent}>
                         <h1 className={styles.bannerTitle}>Compra los mejores productos</h1>
