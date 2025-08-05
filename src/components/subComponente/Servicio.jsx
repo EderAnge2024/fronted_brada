@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import styles from './Servicio.module.css';
 import useEmpleadoStore from "../../store/EmpleadoStore";
-import useProyectoStore from "../../store/proyectostore";
+import useProyectoStore from "../../store/ProyectoStore";
 
 const Servicio = () => {
     const { empleados, fetchEmpleado } = useEmpleadoStore();
